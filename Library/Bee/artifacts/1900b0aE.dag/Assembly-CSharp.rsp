@@ -375,6 +375,7 @@
 -analyzer:"D:/2022.3.5f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Scripts/Bullet.cs"
 "Assets/Scripts/GameManager.cs"
+"Assets/Scripts/HPManager.cs"
 "Assets/Scripts/PlayerAttack.cs"
 "Assets/Scripts/PlayerController.cs"
 "Assets/Scripts/PoolManager.cs"

@@ -22,11 +22,5 @@ public class GameManager : MonoBehaviour
         player_scr.Init();
     }
 
-    private void Update()
-    {
-        if (player_scr.hp <= 0)
-        {
-            Debug.LogError("게임종료");
-        }
-    }
+
 }
