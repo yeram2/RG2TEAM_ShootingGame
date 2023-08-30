@@ -9,6 +9,7 @@ public class HPManager : MonoBehaviour
     public int currentHP; // 현재 체력
 
     public Text hpText; // 화면에 표시할 텍스트
+    public GameObject[] hearts; // Heart 오브젝트 배열
 
     public void Start()
     {
@@ -20,6 +21,15 @@ public class HPManager : MonoBehaviour
     {
         currentHP -= damageAmount;
         UpdateHPText();
+
+        // HP가 감소할 때마다 Heart 오브젝트를 숨김
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i >= currentHP)
+            {
+                hearts[i].SetActive(false);
+            }
+        }
     }
 
     public int GetCurrentHP()

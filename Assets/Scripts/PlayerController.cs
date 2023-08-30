@@ -42,17 +42,19 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            hpManager.TakeDamage(1); // HPManager의 TakeDamage 메서드 호출
-            hp = hpManager.currentHP; // HPManager의 currentHP 값을 가져와서 업데이트
+            hpManager.TakeDamage(1);
+            hp = hpManager.currentHP;
 
             if (hp <= 0)
             {
-                Debug.LogError("게임종료");
-                
+                Debug.LogError("게임 종료");
+                // 게임 종료 또는 다른 종료 처리를 수행하면 됩니다.
+                // 예를 들어 Application.Quit(); 을 사용하여 게임 종료 가능
+                Application.Quit(); // 이 예시에서는 게임을 종료시킴
             }
         }
     }

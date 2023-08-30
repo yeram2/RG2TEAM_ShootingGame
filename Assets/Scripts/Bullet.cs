@@ -6,11 +6,15 @@ public class Bullet : MonoBehaviour
 {
     public float speed;
 
+    private GameManager gameManager;
+
     private Vector3 targetPosition;
     private Vector3 initialPosition;
 
     private void Start()
     {
+        gameManager = FindObjectOfType<GameManager>();
+
         Destroy(gameObject, 5);
         initialPosition = transform.position;
         targetPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -36,6 +40,7 @@ public class Bullet : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            gameManager.score += 100;
         }
     }
 }
